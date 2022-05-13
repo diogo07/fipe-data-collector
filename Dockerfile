@@ -2,10 +2,10 @@ FROM python:3.8
 
 WORKDIR /tmp
 
-RUN apt update && apt upgrade -y
-RUN apt install -y python3-pip
-
 COPY ./requirements.txt .
+
 RUN pip install -r requirements.txt
+
 COPY . . 
-CMD ["python", "main.py"]
+
+CMD ["python", "./main.py"]
